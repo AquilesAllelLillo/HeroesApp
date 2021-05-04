@@ -2,6 +2,8 @@ import React, { useMemo } from "react";
 import { useParams, Redirect } from "react-router-dom";
 import { getHeroById } from "../../selectors/getHeroById";
 
+// const heroImages = require.context("../../assets/heroes", true);
+
 export const HeroScreen = ({ history }) => {
   const { heroeId } = useParams();
 
@@ -33,7 +35,8 @@ export const HeroScreen = ({ history }) => {
     <div className="row mt4">
       <div className="col-4">
         <img
-          src={`../assets/heroes/${heroeId}.jpg`}
+          src={`../assets/heroes/${heroeId}.jpg`} //Desde public/assets
+          // src={heroImages(`./${heroeId}.jpg`)}
           className="img-thumbnail animate__animated animate__fadeInLeft"
           alt={superhero}
         />
